@@ -1,3 +1,4 @@
 .auth-error { color: #b42318; }
 body.signed-in #auth-view { display: none !important; }
 body.signed-in #app-view { display: block !important; }
+.field-hint { font-weight: 500; color: #98a2b3; }
