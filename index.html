@@ -35,19 +35,19 @@
     <p id="load-error" class="error" hidden></p>
     <section id="board" class="board"></section>
   </main>
-  <dialog id="task-dialog"><form id="task-form" method="dialog"><div class="dialog-top"><h2 id="dialog-title">Новая задача</h2><button class="icon" value="cancel">×</button></div>
+  <dialog id="task-dialog"><form id="task-form" method="dialog"><div class="dialog-top"><h2 id="dialog-title">Новая задача</h2><button id="close-task" class="icon" type="button" title="Закрыть">×</button></div>
     <div class="dialog-grid"><section class="details"><input id="task-title" placeholder="Название задачи" required class="title-input">
       <textarea id="task-description" placeholder="Что нужно сделать, детали, ссылки…"></textarea>
       <section id="activity" hidden><h3>Ход работы</h3><div id="comments"></div><div class="comment-add"><input id="comment-input" placeholder="Зафиксировать промежуточный результат"><button id="add-comment" type="button">Добавить</button></div></section>
     </section><aside class="properties">
       <label>Статус<select id="task-status"><option value="inbox">Входящие</option><option value="progress">В работе</option><option value="waiting">На контроле</option><option value="done">Сделано</option></select></label>
       <label>Категория<select id="task-category"><option value="work">Работа</option><option value="personal">Личное</option><option value="home">Дом</option></select></label>
-      <label>Дедлайн<input id="task-due" type="date"></label><label>Теги<input id="task-tags" placeholder="CRM, отчёт"></label>
+      <label>Дедлайн<input id="task-due" type="date"></label><label>Теги <span class="field-hint">несколько — через запятую</span><input id="task-tags" placeholder="CRM, отчёт, срочно"></label>
       <button id="save-task" type="submit">Сохранить</button><button id="delete-task" type="button" class="danger" hidden>Удалить задачу</button>
     </aside></div></form></dialog>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     navigator.serviceWorker?.getRegistrations().then(items=>items.forEach(item=>item.unregister()));
   </script>
-  <script src="./app.js?v=auth-7"></script>
+  <script src="./app.js?v=auth-8"></script>
 </body></html>
