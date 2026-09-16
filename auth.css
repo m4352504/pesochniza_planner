@@ -1,1 +1,3 @@
 .auth-error { color: #b42318; }
+body.signed-in #auth-view { display: none !important; }
+body.signed-in #app-view { display: block !important; }
