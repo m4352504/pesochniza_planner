@@ -7,9 +7,24 @@
   <title>Мой план</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./auth.css">
 </head>
 <body>
-  <main id="app-view">
+  <main id="auth-view" class="auth-shell" hidden>
+    <section class="auth-card">
+      <p class="eyebrow">МОЙ ПЛАН</p>
+      <h1>Вход в проект</h1>
+      <p class="muted">Создайте учётную запись по почте или войдите в существующую.</p>
+      <form id="auth-form">
+        <label>Почта<input id="auth-email" type="email" autocomplete="email" placeholder="name@example.com" required></label>
+        <label>Пароль<input id="auth-password" type="password" autocomplete="current-password" minlength="6" placeholder="Минимум 6 символов" required></label>
+        <button id="auth-submit" type="submit">Войти</button>
+      </form>
+      <p id="auth-notice" class="notice" aria-live="polite"></p>
+      <button id="auth-switch" class="text-button" type="button">Создать учётную запись</button>
+    </section>
+  </main>
+  <main id="app-view" hidden>
     <header><div><p class="eyebrow">МОЙ ПЛАН</p><h1>Задачи и ход работы</h1></div>
       <div class="header-actions"><button id="export" class="secondary">Выгрузить сделанное</button><button id="new-task">＋ Новая задача</button><button id="logout" class="icon" title="Выйти">↗</button></div>
     </header>
@@ -34,5 +49,5 @@
   <script>
     navigator.serviceWorker?.getRegistrations().then(items=>items.forEach(item=>item.unregister()));
   </script>
-  <script src="./app.js?v=stable-1"></script>
+  <script src="./app.js?v=auth-1"></script>
 </body></html>
